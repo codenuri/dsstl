@@ -9,6 +9,7 @@
 
 2. github.com/codenuri/dsstl  에 접속해 보세요
    => DAY1.zip 파일 받으시면 됩니다
+   => OT.txt 참고하세요
 
 3. 수업시간
    오전 :  8:30 ~ 11:00
