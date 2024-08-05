@@ -35,13 +35,17 @@ public:
 	{
 		return current == other.current;
 	}
+	bool operator!=(const slist_iterator& other)
+	{
+		return current != other.current;
+	}
 };
 
 
 
-slist_iterator<int> p(500번지); // 1번째 요소의 주소를 보관했다가
-++p;		// 포인터와 동일한 방식으로 이동하고
-int n = *p; // 포인터와 동일한 방식으로 요소 접근
+//slist_iterator<int> p(500번지); // 1번째 요소의 주소를 보관했다가
+//++p;		// 포인터와 동일한 방식으로 이동하고
+//int n = *p; // 포인터와 동일한 방식으로 요소 접근
 
 
 
@@ -55,6 +59,11 @@ public:
 	{
 		head = new Node<T>(a, head);
 	}
+
+	// 이제 list 는 자신의 처음과 마지막 다음요소(0)을 가리키는 
+	// 반복자를 반환하는 함수가 있어야 합니다.
+	slist_iterator<T> begin() { return slist_iterator<T>(head); }
+	slist_iterator<T> end()   { return slist_iterator<T>(0); }
 };
 
 int main()
