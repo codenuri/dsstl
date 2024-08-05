@@ -16,9 +16,14 @@ int main()
 
 	std::ostream_iterator<int> p1(std::cout, ", ");
 
+	*p1 = 10; // std::cout << 10 << ", "
+	*p1 = 20;
+
 
 	std::list<int> s = { 1, 2, 3 };
 
+	std::copy(s.begin(), s.end(), p1);
+				// => list 의 모든 요소를 화면 출력
 
 }
 
