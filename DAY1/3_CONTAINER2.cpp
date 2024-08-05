@@ -75,4 +75,17 @@ int main()
 	s.push_front(30);
 	s.push_front(40);
 	s.push_front(50); 
+
+	slist_iterator<int> p1 = s.begin(); // s 의 1번째 요소를 가리키는
+										// 포인터 역활의 객체
+	slist_iterator<int> p2 = s.end();   // 마지막 다음요소(0)
+
+	// p1, p2 는 포인터는 아니지만 포인터와 동일하게 사용가능합니다.
+	while (p1 != p2)
+	{
+		std::cout << *p1 << std::endl;
+		++p1;
+	}
+
 }
+
