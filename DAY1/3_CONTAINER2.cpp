@@ -16,10 +16,28 @@ template<typename T> struct Node
 template<typename T> 
 class slist_iterator
 {
-
+	Node<T>* current;
 public:
+	slist_iterator(Node<T>* p = nullptr)
+		: current(p) {}
 
+	slist_iterator& operator++()
+	{
+		current = current->next; // 핵심
+		return *this;
+	}
+
+	T& operator*() { return current->data ; }
+
+	// find 에 보내려면 : ++, *, ==, != 가 가능해야 합니다.
+
+	bool operator==(const slist_iterator& other)
+	{
+		return current == other.current;
+	}
 };
+
+
 
 slist_iterator<int> p(500번지); // 1번째 요소의 주소를 보관했다가
 ++p;		// 포인터와 동일한 방식으로 이동하고
