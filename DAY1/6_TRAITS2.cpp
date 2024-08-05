@@ -2,6 +2,16 @@
 #include <list>
 
 
+// 반복자의 형태
+// 1. class 로 만들어진 객체형 반복자(slist_iterator 같은 것)
+// 2. raw pointer
+
+// 위 2개의 차이점 때문에 아래 sum 같은 알고리즘을 만들기 어렵습니다.
+
+// 이 문제의 해결책 : std::iterator_traits
+// => 다음소스에서 해결                 
+
+
 template<typename T>
 typename T::value_type sum(T first, T last)
 {
