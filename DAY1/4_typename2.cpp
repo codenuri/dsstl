@@ -2,11 +2,22 @@
 #include <vector>
 #include <list>
 
+/*
 void print_first_element(std::vector<int>& v)
 {
 	int n = v.front();
 	std::cout << n << std::endl;
 }
+*/
+
+template<typename T>
+void print_first_element(std::vector<T>& v)
+{
+	? n = v.front();
+
+	std::cout << n << std::endl;
+}
+
 
 int main()
 {
