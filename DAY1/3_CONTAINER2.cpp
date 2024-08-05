@@ -21,21 +21,21 @@ public:
 	slist_iterator(Node<T>* p = nullptr)
 		: current(p) {}
 
-	slist_iterator& operator++()
+	inline slist_iterator& operator++()
 	{
 		current = current->next; // 핵심
 		return *this;
 	}
 
-	T& operator*() { return current->data ; }
+	inline T& operator*() { return current->data ; }
 
 	// find 에 보내려면 : ++, *, ==, != 가 가능해야 합니다.
 
-	bool operator==(const slist_iterator& other)
+	inline bool operator==(const slist_iterator& other)
 	{
 		return current == other.current;
 	}
-	bool operator!=(const slist_iterator& other)
+	inline bool operator!=(const slist_iterator& other)
 	{
 		return current != other.current;
 	}
@@ -86,6 +86,5 @@ int main()
 		std::cout << *p1 << std::endl;
 		++p1;
 	}
-
 }
 
