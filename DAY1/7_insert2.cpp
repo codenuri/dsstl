@@ -27,5 +27,11 @@ int main(int argc, char** argv)
 
 	std::list<int> s3;
 
-	std::copy(s1.begin(), s1.end(), s3.begin()); // ?
+//	std::copy( s1.begin(), s1.end(), s3.begin() ); 
+				// runtime error
+				// s3는 비어 있으므로 "덮어쓰기는 안됩니다."
+
+	std::copy(s1.begin(), s1.end(), std::back_inserter(s3));
+				// ok.. 
+
 }
