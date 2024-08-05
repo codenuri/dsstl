@@ -19,10 +19,16 @@ int main(int argc, char** argv)
 //	std::copy(s1.begin(), s1.end(), p3); // 0, 0, 1,2,3,4,5,0,0,0
 
 	// #2. 함수 버전
-	std::copy(s1.begin(), s1.end(), std::back_inserter(s2));
-	std::copy(s1.begin(), s1.end(), std::front_inserter(s2));
-	std::copy(s1.begin(), s1.end(), std::inserter(s2, s2.begin()));
+//	std::copy(s1.begin(), s1.end(), std::back_inserter(s2));
+					// 0, 0, 0, 0, 0, 1, 2, 3, 4, 5
 
+//	std::copy(s1.begin(), s1.end(), std::front_inserter(s2));
+					// 5, 4, 3, 2, 1, 0, 0, 0, 0, 0
+					// 핵심 : 전방삽입은 삽입결과 요소가 거꾸로 놓이게됩니다.
+
+
+	std::copy(s1.begin(), s1.end(), std::inserter(s2, s2.begin()));
+					// 1, 2, 3, 4, 5, 0, 0, 0, 0, 0
 
 	for (auto& n : s2)
 		std::cout << n << ", ";
