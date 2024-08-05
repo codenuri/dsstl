@@ -1,8 +1,9 @@
+// container5.cpp 추가
 #include <iostream>
 #include <list>
 #include <vector>
 #include <algorithm> // find 같은 알고리즘(일반함수)가
-					// 이 헤더에 있습니다.
+					 // 이 헤더에 있습니다.
 int main()
 {
 	std::list<int> c = { 1,2,3,4,5,6,7,8,9,10 };
