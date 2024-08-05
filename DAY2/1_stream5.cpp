@@ -12,6 +12,16 @@ void show(const C& c)
 	}
 	std::cout << '\n';
 }
+// #2. 반복자 버전
+template<typename T>
+void show(T first, T last)
+{
+	std::ostream_iterator< ? > p(std::cout, ", ");
+
+	std::copy(first, last, p);
+
+	std::cout << '\n';
+}
 
 int main()
 {
@@ -20,6 +30,9 @@ int main()
 
 	show(s);
 	show(x);
+
+	show(s.begin(), s.end());
+	show(x, x + 3);
 
 }
 
