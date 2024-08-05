@@ -7,13 +7,13 @@ class my_back_insert_iterator
 {
 	T& c;
 public:
-	my_back_insert_iterator(T& c) : c(c) {}
+	inline my_back_insert_iterator(T& c) : c(c) {}
 
-	my_back_insert_iterator& operator*() 
+	inline my_back_insert_iterator& operator*()
 	{
 		return *this; 
 	}
-	void operator=( const typename T::value_type& value)
+	inline void operator=( const typename T::value_type& value)
 	{
 		c.push_back(value);
 	}
