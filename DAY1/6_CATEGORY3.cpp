@@ -28,8 +28,9 @@ int main()
 
 	// std::advance vs std::next
 	
-	std::advance(p, 3);	// p 자체를 이동
+	std::advance(p, 3);	// p 자체를 이동  p += 3 의미
 
 	auto p2 = std::next(p, 3); // p는 이동안함.
 							   // p에서 3칸 떨어진 곳의 반복자 반환
+								// auto p2 = p + 3 의 의미
 }
