@@ -20,14 +20,18 @@ int main()
 	// #2. 반복자로 해야 합니다.
 	auto p1 = s1.begin();
 	auto p2 = s1.end();
-
 	auto p3 = s2.begin();
 
 	while (p1 != p2)
 	{
 		*p3 = *p1;
 		++p1;
+		++p3;
 	}
+
+	// #3. std::copy 알고리즘 - 앞으로 수업시간에 계속 사용합니다
+	// => std::copy 가 내부적으로 위처럼 구현됨.
+	std::copy( s1.begin(), s1.end(), s2.begin() );
 }
 
 
