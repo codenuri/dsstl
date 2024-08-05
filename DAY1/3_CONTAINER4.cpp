@@ -56,7 +56,6 @@ public:
 };
 
 // 2_ALGORITHM6.cpp 에서 find 만 복사해 오세요
-
 template<typename T1, typename T2>
 T1 find(T1  first, T1 last, T2 c)
 {

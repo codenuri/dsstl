@@ -14,8 +14,6 @@
 
 // 실패의 반환 : last
 
-
-
 template<typename T1, typename T2>
 T1 find(T1  first, T1 last, T2 c)
 {
