@@ -17,4 +17,10 @@ int main(int argc, char** argv)
 
 	*p = 20; // s.push_back(20);
 
+
+	for (auto e : s)
+	{
+		std::cout << e << ", ";
+	}
+
 }
