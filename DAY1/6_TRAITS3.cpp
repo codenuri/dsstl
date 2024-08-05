@@ -1,19 +1,26 @@
 #include <iostream>
 #include <list>
-
+/*
 template<typename T>
 struct iterator_traits
 {
 	using value_type = typename T::value_type;
 };
 
+// 템플릿 부분 특수화 문법
+template<typename T>
+struct iterator_traits<T*>
+{
+	using value_type = T;
+};
+*/
 
 template<typename T>
-typename T::value_type sum(T first, T last)
+typename std::iterator_traits<T>::value_type sum(T first, T last)
 {
 //	typename T::value_type  s = 0;
 
-	typename iterator_traits<T>::value_type  s = 0;
+	typename std::iterator_traits<T>::value_type  s = 0;
 
 
 
