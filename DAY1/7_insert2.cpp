@@ -13,12 +13,19 @@ int main(int argc, char** argv)
 	// #1. 아래 코드는 s1의 내용을 s2에 "덮어쓰기"
 //	std::copy(s1.begin(), s1.end(), s2.begin());
 
-	// #2. 
-	std::back_insert_iterator<std::list<int>> p(s2);
+	// #2. 아래 코드는 s2에 추가(s2.push_back) 한것
+//	std::back_insert_iterator< std::list<int> > p(s2);
+//	std::copy(s1.begin(), s1.end(), p );
 
-	std::copy(s1.begin(), s1.end(), p );
+	// 아래 한줄은 결국 위 2줄과 동일
+	std::copy(s1.begin(), s1.end(), std::back_inserter(s2) );
 
 
 	for (auto& n : s2)
 		std::cout << n << std::endl; 
+
+
+	std::list<int> s3;
+
+	std::copy(s1.begin(), s1.end(), s3.begin()); // ?
 }
