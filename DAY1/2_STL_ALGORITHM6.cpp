@@ -14,8 +14,9 @@
 
 // 실패의 반환 : last
 
-template<typename T1, typename T2>
-T1 find(T1  first, T1 last, T2 c)
+// cppreference.com 에서 "std::find" 찾아보세요
+template<typename InputIter, typename T>
+InputIter find(InputIter  first, InputIter last, T c)
 {
 	while (first != last && *first != c)
 		++first;
@@ -25,7 +26,6 @@ T1 find(T1  first, T1 last, T2 c)
 int main()
 {
 	double x[] = { 1,2,3,4,5,6,7,8,9,10 };
-
 
 	double* p = find(x, x + 3, 5);
 
