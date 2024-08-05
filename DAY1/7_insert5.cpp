@@ -27,10 +27,19 @@ public:
 
 	my_back_insert_iterator& operator++()
 	{
-		// ??
 		return *this;
 	}
+
+	// 실제 C++ 표준과 같이 사용되려면
+	// 아래와 같은 멤버 타입이 몇개 필요 합니다.
+	using value_type = void;
+	using difference_type = void;
+	using pointer = void;
+	using reference = void;
+	using iterator_category = std::output_iterator_tag;
+	using container_type = T;
 };
+
 
 // 함수 버전
 template<typename T>
@@ -47,6 +56,10 @@ int main()
 	auto p = my_back_inserter(s2);
 
 	*p = 10; 
+	++p;     // 아무일도 하지 않음.
+			 // 하지만, 반드시 지원해야 한다.
+			 // 그래야, std::copy 같은 곳에 보낼수 있다.
+	*p = 20;
 
 	std::copy(s1.begin(), s1.end(), p); // ??
 				// => std::copy 는 내부적으로 1번째, 3번째 인자로 받은
