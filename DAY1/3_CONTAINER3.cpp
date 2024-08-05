@@ -57,8 +57,8 @@ public:
 					// typedef slist_iterator<T> iterator ÀÇ¹Ì
 
 
-	slist_iterator<T> begin() { return slist_iterator<T>(head); }
-	slist_iterator<T> end() { return slist_iterator<T>(0); }
+	iterator begin() { return iterator(head); }
+	iterator end() { return iterator(0); }
 };
 
 int main()
@@ -71,8 +71,8 @@ int main()
 	s.push_front(40);
 	s.push_front(50);
 
-	slist_iterator<int> p1 = s.begin();
-	slist_iterator<int> p2 = s.end();  
+	slist<int>::iterator p1 = s.begin();
+	slist<int>::iterator p2 = s.end();
 
 	while (p1 != p2)
 	{
