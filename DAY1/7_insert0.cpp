@@ -16,6 +16,9 @@ public:
 // 그런데, 타입인자가 복잡해 보일때가 있습니다.
 // 그럴때는 아래 처럼 함수 템플릿을 도입하면 편리합니다.
 
+// => "object generator" 라는 이름을 가진 기술
+// => STL 내부에 이기술을 아주 많이 사용합니다.
+
 template<typename T>
 list<T> make_list(int sz, T value)
 {
@@ -37,5 +40,7 @@ int main()
 					// C++17 부터 가능.
 					// C++14 까지는 안됨.
 
-	auto s3 = make_list(10, 3);
+//	auto s3 = make_list<int>(10, 3); // 이 표기가 정확한 표기법이지만
+	auto s3 = make_list(10, 3);		// 함수 템플릿은 C++98 부터
+										// 타입인자 생략가능
 }
