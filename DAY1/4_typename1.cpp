@@ -17,8 +17,15 @@ template<typename T> void foo(T a)
 	// 2. 타입일수도 있다.
 
 	// 아래 코드 생각해 보세요
+	// Dependent name : 템플릿 인자 T에 의존해서 꺼내는 이름
+	// => 컴파일러는 기본적으로 "값" 으로 해석합니다.
 	T::value * p;
-	T::DWORD * p1;
+//	T::DWORD * p1; // error. DWORD 를 값으로 해석하는 경우
+					// p1 이라는 이름을 알수 없게 된다.
+
+	typename T::DWORD* p1; // dependent name 이
+						   // "값"이 아닌 "타입"이라고
+							// 알려주는 것
 }
 
 int main()
