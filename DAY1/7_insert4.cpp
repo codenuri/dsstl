@@ -18,11 +18,21 @@ public:
 		c.push_back(value);
 	}
 };
+
+// 함수 버전
+template<typename T>
+my_back_insert_iterator<T> my_back_inserter(T& c)
+{
+	return my_back_insert_iterator<T>(c);
+}
+
 int main()
 {
 	std::list<int> s = { 1, 2, 3, 4, 5 };
 
-	my_back_insert_iterator< std::list<int> > p(s);
+//	my_back_insert_iterator< std::list<int> > p(s);
+
+	auto p = my_back_inserter(s);
 
 	*p = 10; // s.push_back(10)
 			 // ( p.operator*() ).operator=(10)
