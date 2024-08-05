@@ -1,8 +1,17 @@
-// github.com/codenuri/dsstl  에서 DAY2.zip  받으시면 됩니다.
-
 #include <iostream>
 #include <iterator>
 #include <list>
+
+// #1. container/배열 버전
+template<typename C>
+void show(const C& c)
+{
+	for (auto& e : c)
+	{
+		std::cout << e << ", ";
+	}
+	std::cout << '\n';
+}
 
 int main()
 {
