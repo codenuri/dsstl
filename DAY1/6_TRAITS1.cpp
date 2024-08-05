@@ -15,6 +15,7 @@ typename T::value_type sum(T first, T last)
 	while (first != last)
 	{
 		s += *first;
+		++first;
 	}
 	return s;
 }
