@@ -13,7 +13,7 @@ int main()
 	std::vector<int> v2;
 
 
-	std::partial_sum(v1.begin(), b1.end(), std::back_inserter(v2));
+	std::partial_sum(v1.begin(), v1.end(), std::back_inserter(v2));
 
 
 	show(v2);
