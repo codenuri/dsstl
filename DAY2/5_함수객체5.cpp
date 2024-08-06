@@ -1,7 +1,14 @@
 #include <iostream>
 #include <algorithm> 
 
+// 아래 함수는 
+// 장점 : 비교 정책을 사용자가 교체 할수 있습니다.
+// 단점 : 비교 정책함수가 수백~수천번 호출되게 되면 성능저하가 큽니다.
 
+// C언어의 "qsort" 가 아래 원래!! 데이타가 많으면 사용하지 마세요. 
+
+// 비교 정책을 변경할수 있는데..성능저하가 없도록 할수 없을까요 ?
+// =>!! 함수 객체는 가능..!!
 
 void Sort(int* x, int sz, bool(*cmp)(int, int) )
 {
@@ -19,8 +26,8 @@ void Sort(int* x, int sz, bool(*cmp)(int, int) )
 }
 
 // Sort 에 전달할 비교함수들..
-bool cmp1(int a, int b) { return a > b; }
-bool cmp2(int a, int b) { return a < b; }
+inline bool cmp1(int a, int b) { return a > b; }
+inline bool cmp2(int a, int b) { return a < b; }
 
 int main()
 {
