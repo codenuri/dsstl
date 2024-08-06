@@ -17,6 +17,7 @@ int main()
 {
 	std::vector<int> v = { 1,2,3,1,2,3,1,2,3,1 };
 
+	/*
 	auto p = std::remove(v.begin(), v.end(), 3);
 
 	show(v);  
@@ -24,6 +25,12 @@ int main()
 	// 컨테이너의 요소를 실제로 제거 하려면
 	// 알고리즘이 아닌 "멤버 함수"를 사용해야 한다.
 	v.erase(p, v.end());
+	*/
+
+	// 일반적으로 위 코드를 아래처럼 많이 사용합니다.
+	// => "erase-remove idioms" 라는 기술
+	v.erase( std::remove(v.begin(), v.end(), 3), v.end() );
+
 
 	show(v);
 
