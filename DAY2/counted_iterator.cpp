@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iterator>
 
+
 class my_default_sentinel_t
 {
 };
@@ -44,6 +45,7 @@ public:
 		// counted_iterator 는 자신이  스스로 끝인지 판단가능합니다.
 		return length != 0;
 	}
+
 	bool operator==(my_default_sentinel_t a)
 	{
 		// a 인자도 필요 없습니다. 
@@ -64,7 +66,7 @@ int main()
 		std::cout << *ci << std::endl;
 		++ci;
 	}
-
+	
 }
 
 
