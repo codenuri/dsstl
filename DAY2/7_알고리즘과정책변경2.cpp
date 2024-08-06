@@ -20,8 +20,15 @@ int main()
 //									std::multiplies<int>{} );
 
 	// 근접차
+//	std::adjacent_difference(v1.begin(), v1.end(),
+//							std::back_inserter(v2));
+							// => 기본 연산은 -
+
+	
 	std::adjacent_difference(v1.begin(), v1.end(),
-							std::back_inserter(v2));
+		std::back_inserter(v2), 
+		std::multiplies<int>{});
+
 
 	show(v2);
 }
