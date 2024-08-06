@@ -16,7 +16,7 @@ void show(const C& c)
 template<typename T>
 void show(T first, T last)
 {
-	std::ostream_iterator< ? > p(std::cout, ", ");
+	std::ostream_iterator< typename std::iterator_traits<T>::value_type > p(std::cout, ", ");
 
 	std::copy(first, last, p);
 
