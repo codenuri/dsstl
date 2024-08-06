@@ -33,11 +33,15 @@ int main()
 
 	std::counted_iterator ci2(p, 5);
 
-	while (ci2 != std::default_sentinel)
+	while ( ci2 != std::default_sentinel )
 	{
 		std::cout << *ci2 << std::endl;
 		++ci2;
 	}
+
+	// std::default_sentinel : std::counted_iterator 와 같이
+	//					반복자 한개안에 종료 조건이 있는 반복자 사용시
+	//					구간의 끝을 표현하기 위한 객체
 }
 
 
