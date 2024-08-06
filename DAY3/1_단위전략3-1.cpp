@@ -7,6 +7,10 @@
 // 1. 반드시 템플릿일 필요는 없지만, 대부분 다양한 타입에 대해
 //    메모리 할당해야 하므로 관례상 템플릿으로
 
+// 2. 반드시 지켜야 하는 규칙(함수 이름등)이 있다.
+// => C++ 표준문서로 약속되어 있다.
+// => cppreference.com, Named Requiredment 에서 Allocator 참고
+
 template<typename T>
 class debug_alloc
 {
