@@ -14,7 +14,7 @@ int main()
 	show(v); // 결과 예측해 보세요
 			// 1. BB, CC, AA, CC
 	        // 2. BB, CC, , 
-			// 3. BB, CC, AA,   <= 정답
+			// 3. BB, CC, AA, ,  <= 정답
 
 	// std::remove 는 뒤의 요소를 앞으로 이동할때
 	// => std::move 사용합니다.
