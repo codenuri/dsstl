@@ -2,6 +2,7 @@
 #include <list>
 #include <algorithm>
 
+// 조건자(predicator) : bool 을 반환 하는 함수
 bool foo(int n) { return n % 3 == 0; }
 
 int main()
@@ -21,6 +22,8 @@ int main()
 	int k = 3;
 }
 
+// std::find    : 값   검색, 3번째 인자가 "값"
+// std::find_if : 조건 검색, 3번째 인자가 "단항 조건자(unary predicator)"
 
 
 
