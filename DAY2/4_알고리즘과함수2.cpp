@@ -14,13 +14,20 @@ int main()
 
     // transform 알고리즘
 
+    /*
     std::transform(s1.begin(), s1.end(), // 1. 이구간의 요소를
                    s2.begin(),           // 2. 이구간의 요소와 함께
                  //s3.begin(),           // 4. 이구간에 넣어라
                    std::back_inserter(s3),
                    foo);                 // 3. 이함수에보내서 결과를
-
+    */
     
+    // 위코드의 마지막 인자를 람다 표현식으로 변경해 보세요
+    std::transform(s1.begin(), s1.end(),
+        s2.begin(),          
+        std::back_inserter(s3),
+        [](int a, int b) { return a + b; });
+
     show(s3);
 }
 
