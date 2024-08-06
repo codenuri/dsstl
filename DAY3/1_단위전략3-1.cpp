@@ -9,13 +9,25 @@
 
 // 2. 반드시 지켜야 하는 규칙(함수 이름등)이 있다.
 // => C++ 표준문서로 약속되어 있다.
-// => cppreference.com, Named Requiredment 에서 Allocator 참고
+// => cppreference.com, Named Requirement 에서 Allocator 참고
 
 template<typename T>
 class debug_alloc
 {
 public:
+	T* allocate(std::size_t size)
+	{
+		void* ptr = malloc(sizeof(T) * size);
 
+		printf("[ debug alloc ] allocate, %p, %d cnt\n", ptr, size);
+
+		return static_cast<T*>(ptr);
+	}
+	void deallocate(T* ptr, std::size_t size)
+	{
+
+		free(ptr);
+	}
 };
 
 
