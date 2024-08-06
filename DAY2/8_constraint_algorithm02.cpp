@@ -18,7 +18,9 @@ int main()
 
 	// 문자열의 갯수를 기준으로 정렬해 보세요
 
-	std::sort(v.begin(), v.end());
+	std::sort(v.begin(), v.end(), 
+			[](const std::string& s1, const std::string& s2) 
+			{ return s1.size() < s2.size(); } );
 
 
 	show(v);
