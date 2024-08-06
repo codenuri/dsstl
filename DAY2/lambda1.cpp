@@ -21,6 +21,8 @@ int main()
 	};
 	std::sort(v.begin(), v.end(), CompilerGeneratedName{} );
 
+	// 람다 표현식의 최종 결과는
+	// => operator() 를 가진 클래스의 임시객체 입니다.
 }
 
 
