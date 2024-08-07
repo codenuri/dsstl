@@ -25,9 +25,15 @@ public:
 	inline T&   top()			 { return c.back(); }
 };
 
+#include <stack> // 이 안에 있는 STL stack 이 외 처럼 설계 되었습니다.
+				 // 흔히 "stack adapter" 라고 부릅니다.
+				 // 기존, sequence container 를 stack 처럼
+				 // 보이도록 함수 이름을 변경한것
+
 int main()
 {
 	stack<int> s1;  // 내부적으로 std::deque 사용
+
 	stack<int, std::vector<int>> s2;
 					// vector 를 stack 처럼 보이게 해달라는 의미
 	
