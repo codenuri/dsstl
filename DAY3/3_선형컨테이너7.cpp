@@ -54,7 +54,11 @@ int main()
 //		std::replace(s.begin(), s.end(), 'i', ' ');
 
 		// 모든 모음을 공백으로!
-		FindChar fc("aeiouAEIOU");
+//		FindChar fc("aeiouAEIOU");
+//		bool b = fc('A');
+
+		FindChar fc("0123456789");
+
 		std::replace_if(s.begin(), s.end(), fc, ' ');
 		
 	}
