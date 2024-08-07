@@ -52,4 +52,8 @@ int main()
 	auto sz1 = v1.size();
 	auto sz2 = v1.max_size();
 	auto ax = v1.get_allocator();// v1이 사용하는 메모리 할당기 얻기
+
+
+
+
 }
