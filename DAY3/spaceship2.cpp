@@ -21,7 +21,7 @@ public:
 	}
 
 	// <=> 를 디폴트 요청하면 : == 필요 없습니다.
-	// <=> 를 사용자가 만들면 : == 도 필요
+	// <=> 를 사용자가 만들면 : == 를 별도로 제공해야 합니다.
 	bool operator==(const Point& other) const
 	{
 		return x == other.x;
