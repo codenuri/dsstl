@@ -41,6 +41,22 @@ int main()
 	std::cout << "------------------" << std::endl;	
 }
 
+// #1. 컨테이너가 primitive type 을 저장하면
+// ex) std::vector<int>, std::vector<double>
+// 
+// => push_back, emplace_back 모두 상관없습니다. 성능도 비슷
+
+// #2. 컨테이너가 user define type 을 "값" 으로 보관하면
+// ex) std::vector<Point>
+
+// v.push_back() 사용하지 말고  v.emplace_back()
+// v.push_front()사용하지 말고  v.emplace_front()
+// v.insert()    사용하지 말고  v.emplace()
+
+
+// #3. 컨테이너가 user define type 을 "포인터" 으로 보관하면
+// ex) std::vector<Point*>
+// => push_back, emplace_back 모두 상관없습니다. 성능도 비슷
 
 
 
