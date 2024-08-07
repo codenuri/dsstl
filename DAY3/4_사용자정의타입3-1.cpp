@@ -11,15 +11,21 @@ public:
 
 	void dump() const { std::cout << x << ", " << y << std::endl; }
 
+	// C++98 스타일
+	/*
 	bool operator<(const Point& other) const
 	{
 		return x < other.x;
 	}
-
 	bool operator==(const Point& other) const
 	{
 		return x == other.x && y == other.y;
 	}
+	*/
+
+	// C++20 스타일
+	// ==, !=, <, >, <=, >= 모두 사용가능. 
+	auto operator<=>(const Point& other) const = default;
 
 };
 
