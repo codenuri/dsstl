@@ -4,7 +4,9 @@
 
 int main()
 {
-	std::stack<int> s;
+//	std::stack<int> s; // std::stack<int, std::deque<int> > s;
+
+	std::stack<int, std::vector<int, debug_alloc<int>> > s;
 
 	s.push(10); // A
 
