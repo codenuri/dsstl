@@ -26,9 +26,38 @@ void ex2()
 	}
 }
 
+
+void use_vector()
+{
+	std::vector<int> v1(10);
+	v1[0] = 0;
+}
+
+void use_array()
+{
+	int x1[10] = { 0 };
+	x1[0] = 0;
+}
+
+void ex3()
+{
+	for (int i = 0; i < size; i++)
+	{
+		use_vector();
+	}
+}
+void ex4()
+{
+	for (int i = 0; i < size; i++)
+	{
+		use_array();
+	}
+}
+
 int main()
 {
 	chronometry(ex1);
 	chronometry(ex2);
-
+	chronometry(ex3);
+	chronometry(ex4);
 }
