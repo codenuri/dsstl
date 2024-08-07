@@ -15,6 +15,19 @@ struct Compare
 	}
 };
 
+/*
+template<typename T>
+class less
+{
+public:
+	bool operator()(const T& p1, const T& p2) const
+	{
+		return p1 < p2;
+	}
+};
+*/
+
+
 // std::less 의 template 인자가 Point 일때
 // 구현을 변경하겠다는 코드
 // => 템플릿 특수화
