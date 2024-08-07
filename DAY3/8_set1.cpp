@@ -16,6 +16,7 @@ int main()
 	s.insert(15);
 	s.insert(5);
 	s.insert(40);
+	s.insert(18);
 
 	auto p = s.begin();
 
