@@ -32,6 +32,10 @@ int main()
 	// 해결책 #1. 비교 함수 전달
 	std::sort(v.begin(), v.end(), 
 		[](const Point& p1, const Point& p2) { return p1.x < p2.x; });
+
+	// 해결책 #2. C++20 이라면 Project 기능
+	std::ranges::sort(v, std::less{}, &Point::x);
+
 }
 
 
