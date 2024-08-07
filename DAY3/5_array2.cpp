@@ -9,13 +9,26 @@
 
 // 모든 데이타를 스택에 보관하는 컨테이너를 설계해 봅시다.
 
+template<typename T, std::size_t N>
 struct array
 {
-	int buff[5];
+	T buff[N];
+
+	using iterator = T*;
+
+	iterator begin() { return buff ; }
+	iterator end()   { return buff + N ; }
+
+	std::size_t size() const { return N; }
 };
+
+#include <array> // 이 안에 있는 코드가 위와 유사합니다.
 
 int main()
 {
 	// 구조체 안에 배열은 아래 처럼 초기화 가능합니다.
-	array a = { 1,2,3,4,5 };
+//	array<int, 5> a = { 1,2,3,4,5 };
+	std::array<int, 5> a = { 1,2,3,4,5 };
+
+	auto sz = a.size();
 }
