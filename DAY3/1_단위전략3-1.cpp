@@ -19,13 +19,13 @@ public:
 	{
 		void* ptr = malloc(sizeof(T) * size);
 
-		printf("[ debug alloc ] allocate, %p, %d cnt\n", ptr, size);
+		printf("[ debug alloc ] allocate, %p, %zd cnt\n", ptr, size);
 
 		return static_cast<T*>(ptr);
 	}
 	void deallocate(T* ptr, std::size_t size)
 	{
-		printf("[ debug alloc ] deallocate, %p, %d cnt\n", ptr, size);
+		printf("[ debug alloc ] deallocate, %p, %zd cnt\n", ptr, size);
 
 		free(ptr);
 	}
