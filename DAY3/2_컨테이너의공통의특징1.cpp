@@ -13,8 +13,9 @@ int main()
 	//    vector 의 설계자가 알고 있다.
 	
 	// 3. 그래서 vector 안에는 size_type 이라는 멤버 타입이 있다.
-
 	std::vector<int>::size_type sz = v.size();
+
+	auto sz = v.size(); // 이렇게 하는게 편리합니다.
 }
 
 template<typename T, typename Alloc = std::allocator<T>>
@@ -26,4 +27,4 @@ public:
 
 	size_type size() const {  .... }
 };
-
+// cppreferenc.com 에서 std::vector 검색
