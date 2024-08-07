@@ -8,6 +8,25 @@
 
 // 예제
 
+// 람다 표현식 보다 함수 객체를 직접 만드는 것이
+// 편리한 경우도 많이 있습니다.
+
+class FindChar
+{
+	std::string data;
+public:
+	FindChar(const std::string& s) : data(s) {}
+
+	bool operator()(char c) const
+	{
+		auto ret = std::find(data.begin(), data.end(), c);
+
+		return ret != data.end();
+	}
+};
+
+
+
 int main()
 {
 	// 참고 : 단어, 문장 입력
@@ -35,6 +54,8 @@ int main()
 //		std::replace(s.begin(), s.end(), 'i', ' ');
 
 		// 모든 모음을 공백으로!
+		FindChar fc("aeiouAEIOU");
+		std::replace_if(s.begin(), s.end(), fc, ' ');
 		
 	}
 
