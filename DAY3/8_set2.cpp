@@ -32,10 +32,17 @@ int main()
 		std::cout << "insert 실패\n";
 	}
 
+	// #3. set 은 push_front, push_back 안됩니다.
+	//	   insert 또는 emplace 만 가능
+//	s.push_back(3);		// error
+//	s.push_front(100);	// error
 
 
-
+	// #4. 반복자는 읽기 전용 입니다.
 	auto p = s.begin();
+//	*p = 50; // error.
+
+
 
 	while (p != s.end())
 	{
