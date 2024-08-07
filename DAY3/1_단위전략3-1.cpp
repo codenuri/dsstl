@@ -25,10 +25,28 @@ public:
 	}
 	void deallocate(T* ptr, std::size_t size)
 	{
+		printf("[ debug alloc ] deallocate, %p, %d cnt\n", ptr, size);
 
 		free(ptr);
 	}
+
+	// 위 2개 외에도 아래 3개가 있어야 합니다.
+	// 관례적인 코드
+	using value_type = T;
+	debug_alloc() {}
+	template<typename U> debug_alloc(const debug_alloc<U>&) {}
 };
+// ==, != 되도록 해야 합니다.
+template<typename T>
+bool operator==(const debug_alloc<T>& a1, const debug_alloc<T>& a2)
+{
+	return true;
+}
+template<typename T>
+bool operator!=(const debug_alloc<T>& a1, const debug_alloc<T>& a2)
+{
+	return false;
+}
 
 
 int main()
