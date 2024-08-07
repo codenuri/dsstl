@@ -7,12 +7,22 @@ struct Point
 	Point(int a = 0, int b = 0) : x(a), y(b) {}
 };
 
+// Point 객체 2개의 크기를 비교하는 함수 객체
+struct Compare
+{
+	bool operator()(const Point& p1, const Point& p2)
+	{
+		return p1.x < p2.x;
+	}
+};
+
+
 int main()
 {
 	// set 에 사용자 정의 타입 보관하기.
 	// => 크기 비교가 가능해야 합니다.
 	// => 비교 함수객체 만들어서 전달해야 합니다.
-	std::set<Point> s;
+	std::set<Point, Compare > s;
 
 	s.insert(Point(5, 5)); 
 	s.emplace(3, 2); // Point(3, 2)
