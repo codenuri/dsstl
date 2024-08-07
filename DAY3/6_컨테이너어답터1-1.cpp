@@ -31,3 +31,15 @@ int main()
 					  // 이렇게 사용할수 없어야 합니다.
 
 }
+
+// LSP : Liskov Substitution Principle
+// => 기반 클래스가 사용되는 자리에는 파생 클래스를 보낼수 있어야 한다.
+/*
+void foo(Animal* p) {}
+
+foo(new Dog);
+
+void goo(list* p) { p->push_front(10); }
+
+goo(new stack);
+*/
