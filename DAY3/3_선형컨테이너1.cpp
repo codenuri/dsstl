@@ -36,8 +36,8 @@ int main()
 	s.push_front(5); // ok
 	d.push_front(5); // ok
 
-	v[0] = 10;
-	s[0] = 10;
-	d[0] = 10;	
+	v[0] = 10;  // ok
+	s[0] = 10;	// error. list ´Â [] ¾ÈµÊ.
+	d[0] = 10;	// ok
 
 }
