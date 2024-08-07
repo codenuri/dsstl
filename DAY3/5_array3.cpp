@@ -1,4 +1,4 @@
-#include <array>
+#include <array> // C++11 에서 도입
 
 int main()
 {
@@ -9,8 +9,8 @@ int main()
 	// #3. 하지만 멤버 함수가 있어서 "raw array" 보다는 편리
 	// #4. 삽입/삭제, 크기 변경등은 할수 없습니다.
 
-	auto sz = a.size();
-	auto first = a.begin();
+	auto sz = a.size();		// ok
+	auto first = a.begin();	// ok
 
 	a.push_back(10); // error
 	a.resize(10); // error
