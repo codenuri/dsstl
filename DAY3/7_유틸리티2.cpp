@@ -19,4 +19,10 @@ int main()
 	// 요소 접근은 std::get
 
 	double d = std::get<1>(t1); // 3.4
+
+	
+	auto t2 = std::make_tuple(1, 3.4, 'A');// object generator
+
+	std::tuple t3(1, 3.4, 'A'); // C++17
+
 }
