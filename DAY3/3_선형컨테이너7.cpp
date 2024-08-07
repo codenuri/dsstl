@@ -32,7 +32,9 @@ int main()
 	{
 //		std::reverse(s.begin(), s.end());
 
-		std::replace(s.begin(), s.end(), 'i', ' ');
+//		std::replace(s.begin(), s.end(), 'i', ' ');
+
+		// 모든 모음을 공백으로!
 		
 	}
 
