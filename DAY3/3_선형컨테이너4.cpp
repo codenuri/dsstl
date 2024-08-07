@@ -14,6 +14,13 @@ int main()
 
 	std::cout << v.size() << ", " << v.capacity() << std::endl;
 
+	v.push_back(0); // 끝에 한개 추가
+					// => 현재 상태는 size < capacity 이므로
+					// => 이 연산은 "not expensive"
+					// => 메모리 재할당 없다.					
+
+	std::cout << v.size() << ", " << v.capacity() << std::endl;
+			
 	
 }
 
