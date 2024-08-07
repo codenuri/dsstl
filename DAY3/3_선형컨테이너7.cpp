@@ -24,7 +24,17 @@ int main()
 		v.push_back(s);
 	//----------------------------
 
-	std::reverse(v.begin(), v.end()); // 상하로 뒤집기
+//	std::reverse(v.begin(), v.end()); // 상/하로 뒤집기
+
+	// 좌/우로 뒤집어 보세요
+
+	for (auto& s : v)
+	{
+//		std::reverse(s.begin(), s.end());
+
+		std::replace(s.begin(), s.end(), 'i', ' ');
+		
+	}
 
 
 	//-------------------------------------
