@@ -3,6 +3,7 @@
 // 아래 코드가 std::unique_ptr 의 구현 원리
 // => 복사 생성자를 "삭제"해서
 // => 복사 될수 없도록 만든것
+
 template<typename T>
 class Ptr
 {
