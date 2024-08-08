@@ -9,6 +9,12 @@ void foo( int a, int b, int c, int d)
     printf("%d, %d, %d, %d\n", a, b, c, d);
 }
 
+class Sample
+{
+public:
+    void foo(int a, int b, int c, int d) {}
+};
+
 int main()
 {
     foo(1,2,3,4);   
@@ -36,6 +42,18 @@ int main()
     std::cout << typeid(f1).name() << std::endl;
     std::cout << typeid(f2).name() << std::endl;
     std::cout << typeid(f3).name() << std::endl;
+
+
+//  f3 = std::bind(&foo, 1, 2, 3, 4); // error.
+                                      // 타입이 다르다.
+
+    // #3. 멤버 함수는 "객체"도 같이 고정해야 합니다.
+
+    Sample s;
+
+    auto f4 = std::bind(&Sample::foo, &s, 1, 2, 3, 4);
+
+    f4(); // s.foo(1,2,3,4)
 }
 
 
