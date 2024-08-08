@@ -56,6 +56,15 @@ int main()
 		// e 는 pair
 		std::cout << e.first << " : " << e.second << std::endl;
 	}
+
+	// 주의!! map 에서 특정 키값을 검색할때
+	// 절때 아래 처럼 하지마세요
+	if (m["sun"] == "aaa") {}  // "sun" 키값이 없으면
+							   // 새롭게 생성하고 있는 코드
+
+	auto it = m.find("sun");
+	if (it == m.end()) {} // 이렇게 해야 합니다.
+								
 }
 
 
