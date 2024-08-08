@@ -18,6 +18,10 @@ public:
 	Ptr(Car* p = 0) : obj(p) {}
 
 	Car* operator->() { return obj; }
+
+	Car& operator*() { return *obj; }
+
+	~Ptr() { delete obj; }
 };
 
 int main()
