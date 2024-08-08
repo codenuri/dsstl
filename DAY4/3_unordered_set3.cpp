@@ -21,7 +21,7 @@ struct PeopleHash
 		std::hash<int> hi;
 		std::hash<std::string> hs;
 
-		return hi(p.age) + hi(p.name);
+		return hi(p.age) + hs(p.name);
 	}
 };
 
