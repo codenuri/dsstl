@@ -34,6 +34,7 @@ int main()
 
 	// unique_ptr 은 control block 이 없습니다.
 	// => template 인자로 받으면 보관하지 않아도 가능. 속도도 증가
+	
 }
 
 template<typename T, typename D = std::default_delete<T>>
@@ -47,3 +48,14 @@ public:
 		d(obj); // 삭제. 
 	}
 };
+
+// shared_ptr 도 위처럼 하면 안되나요 ??
+
+// shared_ptr : 삭제자를 변경해도 같은 타입. 컨테이너에 같이 보관 가능
+// unique_ptr : 삭제자를 변경하면 다른 타입. 
+
+std::shared_ptr<int> sp1(메모리할당, 삭제자1);
+std::shared_ptr<int> sp2(메모리할당, 삭제자2); // sp1, sp2 같은 타입
+
+std::unique_ptr<int, 삭제자1> up1;
+std::unique_ptr<int, 삭제자2> up2; // up1, up2 는 다른 타입
