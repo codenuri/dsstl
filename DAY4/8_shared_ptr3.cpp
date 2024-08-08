@@ -16,11 +16,11 @@ int main()
 					// bug : 할당은 malloc, 해지는 : delete
 
 	// 방법 #1. 생성자 2번째 인자로 삭제자 전달
-	std::shared_ptr<int> sp3(static_cast<int*>(malloc(sizeof(int)),
+	std::shared_ptr<int> sp3(static_cast<int*>(malloc(sizeof(int))),
 						   	 &foo); // 생성자 2번째 인자로 삭제자 전달
 									// 소멸자에서 delete 아닌 foo호출
 
-	std::shared_ptr<int> sp4(static_cast<int*>(malloc(sizeof(int)),
+	std::shared_ptr<int> sp4(static_cast<int*>(malloc(sizeof(int))),
 		&free); // free를 직접 전달도 가능
 
 
