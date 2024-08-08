@@ -54,6 +54,18 @@ int main()
     auto f4 = std::bind(&Sample::foo, &s, 1, 2, 3, 4);
 
     f4(); // s.foo(1,2,3,4)
+
+
+    // 참고!
+    // => 일반 함수 이름은 함수 주소로 암시적 형변환 됩니다.
+    // => 멤버 함수 이름은 함수 주소로 암시적 형변한 안됩니다.
+
+    void(*f)(int, int, int, int) = &foo;
+    void(*f)(int, int, int, int) = foo; // ok
+
+    void(Sample::*f)(int, int, int, int) = &Sample::foo;
+    void(Sample::*f)(int, int, int, int) = Sample::foo; // error
+                                        // 반드시 & 필요
 }
 
 
