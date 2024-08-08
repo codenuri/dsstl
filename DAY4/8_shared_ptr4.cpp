@@ -22,6 +22,8 @@ int main()
 	// => 상호 참조, 순환 참조, 원형 참조(cycle reference) 현상
 	sp1->bf = sp2;
 	sp2->bf = sp1;
+
+	// 해결책은 다음소스에서.. 
 }
 
 
