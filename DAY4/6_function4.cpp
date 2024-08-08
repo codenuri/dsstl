@@ -29,6 +29,8 @@ int main()
     // 권장은 "람다 표현식을 새롭게 만드세요"
 }
 
+// 파이썬 : functools.partial() 학습해 보세요
+//         => std::bind() 역활
 
 
 
