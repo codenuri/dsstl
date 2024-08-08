@@ -40,6 +40,8 @@ int main()
 
 	nc.add_observer("LOWBATTERY", &foo);
 
+	nc.add_observer("LOWBATTERY", [](int a) { std::cout << "lambda\n"; });
+
 	nc.add_observer("LOWBATTERY",     std::bind(&goo, _1, 11));
 	nc.add_observer("DISCONNET_WIFI", std::bind(&goo, _1, 12));
 
