@@ -20,6 +20,9 @@ int main()
 
 	std::shared_ptr<Point> sp3 = std::make_shared<Point>(1,2);
 									// 최선의 코드!! 권장.!!
+
+	// int 일때도 아래 처럼
+	std::shared_ptr<int> sp4 = std::make_shared<int>(0);
 }
 
 
