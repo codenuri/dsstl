@@ -25,9 +25,9 @@ int main()
 	const char* sp2 = "hello";
 
 	printf("%p\n", sa1);
-	printf("%p\n", sa2);
+	printf("%p\n", sa2); // sa1 苞 促弗 林家
 	printf("%p\n", sp1);
-	printf("%p\n", sp2);
+	printf("%p\n", sp2); // sp1苞 悼老林家
 	
 	
 }
