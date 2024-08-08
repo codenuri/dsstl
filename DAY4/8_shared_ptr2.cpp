@@ -33,12 +33,12 @@ int main()
 	// 3. shared_ptr을 생성해서 반환 
 	std::shared_ptr<Point> sp = std::make_shared<Point>(1, 2);
 
+	// std::make_shared 장점
+	// 1. 효율적인 메모리 ( Point 와 Control block를 한번에 할당)
+	// 2. 안전성
 	
-	
+	foo(std::shared_ptr<Point>( new Point(1,2) ), goo());
 }
-
-
-
 
 
 
