@@ -37,14 +37,24 @@ int main()
 	// 1. 효율적인 메모리 ( Point 와 Control block를 한번에 할당)
 	// 2. 안전성
 	
-	foo(std::shared_ptr<Point>( new Point(1,2) ), goo());
+	// 아래 코드는 3가지 일을 합니다. ( A, B, C )
+	// => A, B, C 순서로 실행되면 문제 없습니다.
+	// => A, C, B 순서로 실행되고, C에서 예외가 나오면 ??
+	//			B					A              C
+	foo( std::shared_ptr<Point>( new Point(1,2) ), goo() );
+
+	// 위 코드에서 알수 있는 것
+	// => "자원을 획득하면 즉시, 관리 객체에 전달해야 합니다."
+	// => "자원의 획득과 스마트 포인터 생성은 "한번"에 해야 안전합니다.
+
+
+	foo( std::make_shared<Point>(1,2), goo());
 }
-
-
-
 
 
 void foo( std::shared_ptr<Point> sp, int n) {}
 
 int goo() { return 10; }
 
+
+f(f1(), f2())
