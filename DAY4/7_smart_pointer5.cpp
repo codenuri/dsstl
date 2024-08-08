@@ -5,6 +5,7 @@ class Ptr
 {
 	T* obj;
 	int* ref;
+
 public:
 	Ptr(T* p = 0) : obj(p) 
 	{
@@ -38,7 +39,6 @@ int main()
 	*p1 = 10;
 
 	Ptr<int> p2 = p1;	
-
 
 }
 
