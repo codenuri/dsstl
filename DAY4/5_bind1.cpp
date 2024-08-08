@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
-#include <functional>
-using namespace std::placeholders;
+#include <functional>   // std::bind 가 있는 헤더
+using namespace std::placeholders; // _1, _2, _3 을 위해서.. 
 
 // foo : 4항 함수 ( 인자가 4개 )
 void foo( int a, int b, int c, int d)
@@ -15,21 +15,27 @@ int main()
 
     // std::bind : 특정 함수의 인자를 고정한 새로운 함수를 만드는 도구
 
-    // 사용법 : std::bind(M항함수, M개인자)
+    // #1. 사용법 : std::bind(M항함수, M개인자)
 
     auto f1 = std::bind(&foo, 1, 2, 3, 4); // 4항함수 => 0항함수로
-
     f1();   // foo( 1, 2, 3, 4) 와 동일
 
 
     auto f2 = std::bind(&foo, 7, _1, 6, _2); // 4항 => 2항
-
     f2(5, 3); // foo(7, 5, 6, 3)
 
 
-    auto f3 = ? ;
-
+    auto f3 = std::bind(&foo,  _2, _3, 8, _1) ;
     f3(7, 3, 2); // foo(3, 2, 8, 7) 나오게 위 ? 만들어 보세요
+
+
+    // #2. std::bind 반환값
+    // => 사용하는 형태에 따라서(인자) 반환 타입은 모두 다른 타입입니다.
+    // => auto 에 담거나, std::function 에 담아야 합니다.
+
+    std::cout << typeid(f1).name() << std::endl;
+    std::cout << typeid(f2).name() << std::endl;
+    std::cout << typeid(f3).name() << std::endl;
 }
 
 
