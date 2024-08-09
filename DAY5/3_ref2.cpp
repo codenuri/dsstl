@@ -44,3 +44,9 @@ int main()
 	std::cout << r2 << std::endl; 
 }
 
+
+// std::reference_wrapper 핵심 정리
+
+// 1. 결국 객체의 주소를 보관하고 있습니다.
+
+// 2. "raw reference(T&)" 로 암시적 변환 가능합니다.
