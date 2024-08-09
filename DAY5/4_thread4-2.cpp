@@ -10,6 +10,14 @@ using namespace std::literals;
 // => 스레드간 연산의 결과를 전달하기 위한
 // => C++ 표준 방식
 
+
+// promise future 는 1회용입니다.
+// 
+// 여러번 통신 하려면 
+// => std::condition_variable 로 직접 구현해야 합니다.
+// => 복잡한 코드가 됩니다.
+
+
 void Add(int a, int b, std::promise<int>& p )
 {
 	try
