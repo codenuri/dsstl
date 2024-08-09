@@ -27,7 +27,13 @@ int main()
 {
 	std::vector<int> v = { 1,2,3,7,8,9,4,5,6,10 };
 
+	// #1. 클래스 직접 사용
 	take_view tv1(v, 5);
+
+	// #2. 도움 함수(object generator)
+	auto tv2 = take(v, 5);
+
+	
 
 	for (auto e : tv1)
 	{
