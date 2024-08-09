@@ -2,7 +2,7 @@
 #include <chrono>
 #include <iostream>
 
-void ex1()
+void ex1(int arg)
 {
 	std::list<int> s;
 
@@ -10,8 +10,24 @@ void ex1()
 		s.push_back(i);
 }
 
+class stop_watch
+{
+	std::chrono::system_clock::time_point start;
+
+public:
+	stop_watch()
+	{
+
+	}
+
+	~stop_watch()
+	{
+
+	}
+};
+
 int main()
 {
 	stop_watch sw; // 만들어 봅시다.
-	ex1();
+	ex1(0);
 }
