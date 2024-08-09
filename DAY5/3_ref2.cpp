@@ -32,6 +32,14 @@ int main()
 
 	std::cout << n1 << std::endl; 
 	std::cout << n2 << std::endl; 
+
+	// my_reference_wrapper 타입은 기본적으로 cout 으로 출력 안됩니다.
+	// => 이경우, 컴파일러는 cout 으로 출력가능한 타입으로 변환될수 있는지
+	//    찾게 됩니다.
+	// => int& 로 변환 가능한데, int& 타입을 출력 가능합니다
+
+	// 즉, "cout << r1.operator int&() " 로 실행됩니다.
+
 	std::cout << r1 << std::endl; 
 	std::cout << r2 << std::endl; 
 }
