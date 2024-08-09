@@ -11,6 +11,12 @@ using namespace std::literals;
 // async : 기존 함수의 코드를 수정하지 않고도
 //         멀티스레드로 수행후 결과를 얻을때 사용
 
+// => 내부적으로는 "std::thread, std::promise" 를 사용해서 
+//    구현되어 있습니다.
+
+// 단순히 특정 함수를 비동기(스레드)로 실행하려면
+// std::thread 보다 std::async 권장 - effective C++ 격언
+
 int Add(int a, int b)
 {
 	std::this_thread::sleep_for(5s);
