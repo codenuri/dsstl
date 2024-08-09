@@ -20,7 +20,10 @@ int main()
 
 	using Meter      = std::chrono::duration<int, std::ratio<1, 1>>;
 	using CentiMeter = std::chrono::duration<int, std::ratio<1, 100>>;
-	using KiloMeter  = std::chrono::duration<int, std::ratio<1000,1 >;
+//	using KiloMeter  = std::chrono::duration<int, std::ratio<1000,1>>;
+
+	using KiloMeter = std::chrono::duration<int,  std::kilo >;
+											// chrono1.cpp 아래소스
 
 	KiloMeter km(1);
 	Meter m(km);
@@ -36,5 +39,5 @@ int main()
 
 
 	using seconds = std::chrono::duration<int, std::ratio<1, 1>>;
-	using minutes = std::chrono::duration<int, ?>;
+	using minutes = std::chrono::duration<int, std::ratio<60, 1>>;
 }
