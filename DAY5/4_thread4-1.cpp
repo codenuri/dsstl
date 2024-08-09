@@ -7,6 +7,9 @@ using namespace std::literals;
 
 
 // 방법 #1. out parameter 사용
+// => 스레드 함수에서 수행한 연산의 결과를 대기하는 것이 아니라
+// => 스레드 자체의 종료를 대기하게 된다.
+// => 연산 완료시 즉시 알려줄수 없을까 ??
 
 void Add(int a, int b, int& s)
 {
