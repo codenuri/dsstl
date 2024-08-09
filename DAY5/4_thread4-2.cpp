@@ -38,10 +38,14 @@ int main()
 	std::thread t(&Add, 1, 2, std::ref(p));
 
 	// 주스레드는 다른 작업을 하다가 결과가 필요 할때
+	
+	std::cout << "main 다른작업 " << std::endl;
+	
 	// future 에서 꺼내면 됩니다.
 
 	int ret = ft.get(); // 결과가 있으면 즉시 꺼내고
 						// 없으면 대기 합니다.
+						// ft.wait_for()
 
 	std::cout << "결과 : " << ret << std::endl;
 
