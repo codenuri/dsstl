@@ -19,11 +19,17 @@ int main()
 
 	// #2. 함수 버전 사용
 	// => "std::views" 라는 이름의 namespace 
-	auto fv = std::views::filter(v, [](int n) { return n % 2 == 0; });
+	// => 클래스이름에서 "view" 를 제거하고, 인자갯수는 클래스 버전과동일
+//	auto fv = std::views::filter(v, [](int n) { return n % 2 == 0; });
+//	auto tv = std::views::take(fv, 3);
+//	auto rv = std::views::reverse(tv);
 
-	auto tv = std::views::take(fv, 3);
-
-	auto rv = std::views::reverse(tv);
+	// #3. pipe line
+	// => 인자의 갯수가 한개 줄어들게 됩니다.
+	
+	auto rv = v | std::views::filter([](int n) { return n % 2 == 0; })
+				| std::views::take(3)
+				| std::views::reverse;
 
 
 	for (auto e : rv) // 결과 예측해 보세요 4, 8, 2
