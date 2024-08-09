@@ -25,9 +25,18 @@ public:
 								std::chrono::system_clock::now();
 
 		// time_point 끼리 뺄셈을 하면 결과가 nanoseconds 타입으로 나오게됩니다.
-		std::chrono::nanoseconds nano = end - start;
+//		std::chrono::nanoseconds nano = end - start;
 
-		std::cout << nano.count() << std::endl;
+//		std::chrono::seconds result =
+//			std::chrono::duration_cast<std::chrono::seconds>(end - start);
+
+		// 표준의 second 는 int 타입입니다.
+		// 새롭게 double 타입의 second 를 만들어 봅시다.
+		using mysecond = std::chrono::duration<double, std::ratio<1, 1>>;
+			
+		mysecond result = std::chrono::duration_cast<mysecond>(end - start);
+
+		std::cout << result.count() << std::endl;
 	}
 };
 
