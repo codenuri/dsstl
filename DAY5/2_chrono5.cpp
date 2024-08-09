@@ -40,8 +40,17 @@ public:
 	}
 };
 
+template<typename F, typename T>
+void chronometry(F f, T arg)
+{
+	stop_watch sw;
+	f(arg);
+}
+
 int main()
 {
-	stop_watch sw; // 만들어 봅시다.
-	ex1(0);
+//	stop_watch sw; // 만들어 봅시다.
+//	ex1(0);
+
+	chronometry(ex1, 0);
 }
