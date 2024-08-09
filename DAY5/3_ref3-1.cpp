@@ -32,3 +32,12 @@ int main()
 
 	std::cout << n << std::endl;  
 }
+
+
+// std::reference_wrapper 의 의미!!
+
+// "call by value" 로 설계되어 있는 도구(함수)를 사용할때
+
+// 인자를 reference 로 전달할때 사용
+
+// 쉽게 사용하게 위해서 "std::ref()" 제공
