@@ -18,17 +18,17 @@ int main()
 	std::cout << d2.count() << std::endl; // 20
 
 
-	using Meter = std::chrono::duration<int, std::ratio<1, 1>>;
-	using CentiMeter = std::chrono::duration<int, ?>;
-	using KiloMeter  = std::chrono::duration<int, ? >;
+	using Meter      = std::chrono::duration<int, std::ratio<1, 1>>;
+	using CentiMeter = std::chrono::duration<int, std::ratio<1, 100>>;
+	using KiloMeter  = std::chrono::duration<int, std::ratio<1000,1 >;
 
 	KiloMeter km(1);
-
 	Meter m(km);
 	CentiMeter cm(m);
 
-	std::cout << m.count() << std::endl; // ?
-	std::cout << cm.count() << std::endl; // ?
+	std::cout << m.count() << std::endl; // 1000
+	std::cout << cm.count() << std::endl; // 100000
 
-
+	Meter m2(1230);
+	KiloMeter km2 = m2;
 }
