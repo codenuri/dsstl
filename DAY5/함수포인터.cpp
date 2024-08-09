@@ -35,4 +35,8 @@ int main()
 	// => C++17 std::invoke
 	std::invoke(f1, 10);       // 일반함수 포인터로 호출
 	std::invoke(f2, &obj, 10); // 멤버함수 포인터로 호출
+
+
+	chronometry(&foo, 10); // 일반함수포인터 전달
+	chronometry(&Sample::foo, &obj, 10); // 일반함수포인터 전달
 }
