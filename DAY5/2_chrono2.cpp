@@ -30,5 +30,11 @@ int main()
 	std::cout << cm.count() << std::endl; // 100000
 
 	Meter m2(1230);
-	KiloMeter km2 = m2;
+//	KiloMeter km2 = m2; // error. 데이타 손실 발생
+
+	KiloMeter km2 = std::chrono::duration_cast<KiloMeter>(m2);
+
+
+	using seconds = std::chrono::duration<int, std::ratio<1, 1>>;
+	using minutes = std::chrono::duration<int, ?>;
 }
