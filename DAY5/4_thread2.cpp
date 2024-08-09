@@ -30,10 +30,11 @@ int main()
 
 	// 호출가능한 모든 함수를 스레드로 수행 할수 있습니다
 
-	Test t;
-	std::thread t1(&Test::goo, &t, 1, 3.4); // 멤버 함수
+	Test test;
+	std::thread t1( &Test::goo, &test, 1, 3.4 ); // 멤버 함수
+						// t.goo(1, 3.4)
 
-	std::thread t2([](int n) { std::cout << "lambda\n"; }(0));
+	std::thread t2( [](int n) { std::cout << "lambda\n"; }, 0 );
 
 	t1.join();
 	t2.join();
