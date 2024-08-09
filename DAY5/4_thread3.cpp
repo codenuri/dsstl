@@ -6,16 +6,28 @@ int shared_data = 10;
 
 std::mutex mtx;
 
+template<typename T>
+class lock_guard
+{
+	T& mtx;
+public:
+	lock_guard(T& m) : mtx(m) { mtx.lock(); }
+	~lock_guard()             { mtx.unlock(); }
+};
 
 void foo()
 {
-	mtx.lock();
+	lock_guard<std::mutex> g(mtx);
+//	mtx.lock();
 
 	// 공유 자원 사용	
 	shared_data = 200;
 
-	mtx.unlock();
+//	mtx.unlock();
 }
+
+
+
 
 int main()
 {
