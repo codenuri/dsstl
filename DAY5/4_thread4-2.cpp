@@ -37,9 +37,18 @@ int main()
 
 	std::thread t(&Add, 1, 2, std::ref(p));
 
-	t.join();
+	// 주스레드는 다른 작업을 하다가 결과가 필요 할때
+	// future 에서 꺼내면 됩니다.
+
+	int ret = ft.get(); // 결과가 있으면 즉시 꺼내고
+						// 없으면 대기 합니다.
 
 	std::cout << "결과 : " << ret << std::endl;
+
+
+	t.join(); // 스레드 자체의 종료의 대기
+
+
 }
 
 
